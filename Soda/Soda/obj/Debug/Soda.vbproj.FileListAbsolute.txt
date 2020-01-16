@@ -1,0 +1,12 @@
+C:\Users\Rasmus\source\repos\Soda\Soda\bin\Debug\Soda.exe.config
+C:\Users\Rasmus\source\repos\Soda\Soda\bin\Debug\Soda.exe
+C:\Users\Rasmus\source\repos\Soda\Soda\bin\Debug\Soda.pdb
+C:\Users\Rasmus\source\repos\Soda\Soda\bin\Debug\Soda.xml
+C:\Users\Rasmus\source\repos\Soda\Soda\obj\Debug\Soda.vbprojAssemblyReference.cache
+C:\Users\Rasmus\source\repos\Soda\Soda\obj\Debug\Soda.Form1.resources
+C:\Users\Rasmus\source\repos\Soda\Soda\obj\Debug\Soda.Resources.resources
+C:\Users\Rasmus\source\repos\Soda\Soda\obj\Debug\Soda.vbproj.GenerateResource.cache
+C:\Users\Rasmus\source\repos\Soda\Soda\obj\Debug\Soda.vbproj.CoreCompileInputs.cache
+C:\Users\Rasmus\source\repos\Soda\Soda\obj\Debug\Soda.exe
+C:\Users\Rasmus\source\repos\Soda\Soda\obj\Debug\Soda.xml
+C:\Users\Rasmus\source\repos\Soda\Soda\obj\Debug\Soda.pdb
