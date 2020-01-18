@@ -23,6 +23,7 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.reset = New System.Windows.Forms.Button()
         Me.back = New System.Windows.Forms.Button()
         Me.btn1 = New System.Windows.Forms.Button()
         Me.btn2 = New System.Windows.Forms.Button()
@@ -39,7 +40,8 @@ Partial Class Form1
         Me.output = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.instruct = New System.Windows.Forms.Label()
-        Me.reset = New System.Windows.Forms.Button()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
@@ -47,24 +49,35 @@ Partial Class Form1
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveBorder
-        Me.Panel1.Controls.Add(Me.reset)
-        Me.Panel1.Controls.Add(Me.back)
         Me.Panel1.Controls.Add(Me.btn1)
+        Me.Panel1.Controls.Add(Me.reset)
         Me.Panel1.Controls.Add(Me.btn2)
         Me.Panel1.Controls.Add(Me.btn5)
         Me.Panel1.Controls.Add(Me.btn10)
         Me.Panel1.Controls.Add(Me.btn20)
+        Me.Panel1.Controls.Add(Me.Panel3)
+        Me.Panel1.Controls.Add(Me.back)
         Me.Panel1.Controls.Add(Me.enter)
         Me.Panel1.Controls.Add(Me.right)
         Me.Panel1.Controls.Add(Me.left)
-        Me.Panel1.Location = New System.Drawing.Point(15, 261)
+        Me.Panel1.Location = New System.Drawing.Point(63, 247)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(346, 177)
+        Me.Panel1.Size = New System.Drawing.Size(248, 198)
         Me.Panel1.TabIndex = 2
+        '
+        'reset
+        '
+        Me.reset.BackColor = System.Drawing.SystemColors.ActiveBorder
+        Me.reset.Location = New System.Drawing.Point(19, 161)
+        Me.reset.Name = "reset"
+        Me.reset.Size = New System.Drawing.Size(75, 20)
+        Me.reset.TabIndex = 21
+        Me.reset.Text = "reset"
+        Me.reset.UseVisualStyleBackColor = False
         '
         'back
         '
-        Me.back.Location = New System.Drawing.Point(215, 132)
+        Me.back.Location = New System.Drawing.Point(114, 132)
         Me.back.Name = "back"
         Me.back.Size = New System.Drawing.Size(113, 27)
         Me.back.TabIndex = 20
@@ -73,52 +86,57 @@ Partial Class Form1
         '
         'btn1
         '
+        Me.btn1.BackColor = System.Drawing.SystemColors.ActiveBorder
         Me.btn1.Location = New System.Drawing.Point(19, 132)
         Me.btn1.Name = "btn1"
         Me.btn1.Size = New System.Drawing.Size(75, 23)
         Me.btn1.TabIndex = 19
         Me.btn1.Text = "1"
-        Me.btn1.UseVisualStyleBackColor = True
+        Me.btn1.UseVisualStyleBackColor = False
         '
         'btn2
         '
+        Me.btn2.BackColor = System.Drawing.SystemColors.ActiveBorder
         Me.btn2.Location = New System.Drawing.Point(19, 103)
         Me.btn2.Name = "btn2"
         Me.btn2.Size = New System.Drawing.Size(75, 23)
         Me.btn2.TabIndex = 18
         Me.btn2.Text = "2"
-        Me.btn2.UseVisualStyleBackColor = True
+        Me.btn2.UseVisualStyleBackColor = False
         '
         'btn5
         '
+        Me.btn5.BackColor = System.Drawing.SystemColors.ActiveBorder
         Me.btn5.Location = New System.Drawing.Point(19, 74)
         Me.btn5.Name = "btn5"
         Me.btn5.Size = New System.Drawing.Size(75, 23)
         Me.btn5.TabIndex = 17
         Me.btn5.Text = "5"
-        Me.btn5.UseVisualStyleBackColor = True
+        Me.btn5.UseVisualStyleBackColor = False
         '
         'btn10
         '
+        Me.btn10.BackColor = System.Drawing.SystemColors.ActiveBorder
         Me.btn10.Location = New System.Drawing.Point(19, 45)
         Me.btn10.Name = "btn10"
         Me.btn10.Size = New System.Drawing.Size(75, 23)
         Me.btn10.TabIndex = 16
         Me.btn10.Text = "10"
-        Me.btn10.UseVisualStyleBackColor = True
+        Me.btn10.UseVisualStyleBackColor = False
         '
         'btn20
         '
+        Me.btn20.BackColor = System.Drawing.SystemColors.ActiveBorder
         Me.btn20.Location = New System.Drawing.Point(19, 16)
         Me.btn20.Name = "btn20"
         Me.btn20.Size = New System.Drawing.Size(75, 23)
         Me.btn20.TabIndex = 15
         Me.btn20.Text = "20"
-        Me.btn20.UseVisualStyleBackColor = True
+        Me.btn20.UseVisualStyleBackColor = False
         '
         'enter
         '
-        Me.enter.Location = New System.Drawing.Point(261, 60)
+        Me.enter.Location = New System.Drawing.Point(129, 75)
         Me.enter.Name = "enter"
         Me.enter.Size = New System.Drawing.Size(80, 51)
         Me.enter.TabIndex = 14
@@ -127,7 +145,7 @@ Partial Class Form1
         '
         'right
         '
-        Me.right.Location = New System.Drawing.Point(203, 65)
+        Me.right.Location = New System.Drawing.Point(175, 16)
         Me.right.Name = "right"
         Me.right.Size = New System.Drawing.Size(52, 41)
         Me.right.TabIndex = 11
@@ -136,7 +154,7 @@ Partial Class Form1
         '
         'left
         '
-        Me.left.Location = New System.Drawing.Point(145, 65)
+        Me.left.Location = New System.Drawing.Point(110, 16)
         Me.left.Name = "left"
         Me.left.Size = New System.Drawing.Size(52, 41)
         Me.left.TabIndex = 10
@@ -227,20 +245,28 @@ Partial Class Form1
         Me.instruct.Text = "Vælg din sodavand"
         Me.instruct.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
-        'reset
+        'Panel3
         '
-        Me.reset.Location = New System.Drawing.Point(19, 157)
-        Me.reset.Name = "reset"
-        Me.reset.Size = New System.Drawing.Size(75, 20)
-        Me.reset.TabIndex = 21
-        Me.reset.Text = "reset"
-        Me.reset.UseVisualStyleBackColor = True
+        Me.Panel3.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.Panel3.Location = New System.Drawing.Point(9, 8)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(95, 181)
+        Me.Panel3.TabIndex = 22
+        '
+        'Panel4
+        '
+        Me.Panel4.BackColor = System.Drawing.SystemColors.ButtonShadow
+        Me.Panel4.Location = New System.Drawing.Point(386, 335)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(200, 71)
+        Me.Panel4.TabIndex = 4
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "Form1"
@@ -269,4 +295,6 @@ Partial Class Form1
     Friend WithEvents btn20 As Button
     Friend WithEvents back As Button
     Friend WithEvents reset As Button
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents Panel4 As Panel
 End Class
