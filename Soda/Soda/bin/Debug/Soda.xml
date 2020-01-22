@@ -22,5 +22,35 @@ Soda
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="P:Soda.My.Resources.Resources._82334731_2724132454302789_5873125854657118208_n">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Soda.My.Resources.Resources.coke_rot">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Soda.My.Resources.Resources.fanta_rot">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Soda.My.Resources.Resources.image">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Soda.My.Resources.Resources.pepsi_rot">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Soda.My.Resources.Resources.sprite_rot">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 </members>
 </doc>

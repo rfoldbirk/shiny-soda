@@ -7,9 +7,10 @@
     Dim shopping_cart As New List(Of Integer) From
     {0, 0, 0, 0}
 
+    Dim dispenser_counter_i As Integer = 0
+
     Dim sodas As New List(Of String) From
     {"cola", "fanta", "sprite", "pepsi", "køb"}
-
 
     Dim prices As New List(Of Integer) From
     {15, 20, 17, 9}
@@ -42,15 +43,17 @@
             End If
         End While
 
-        Dim str As String = "Du får tilbage:"
+        Dim str As String = "Du får "
 
         For index = 0 To return_list.Count - 1
             If return_list(index) > 0 Then
-                str = str & " " & return_list(index) & " " & money_list(index) & " kr,"
+                str = str & " " & return_list(index) & ": " & money_list(index) & " kr,"
             End If
         Next
 
-        output.Text = str
+        output.Text = str & " tilbage"
+
+        dispenser_timer.Start()
     End Sub
 
     Sub update_choice()
@@ -136,7 +139,7 @@
             End If
         Else
             ' state = 1
-            If money_given >= total Then
+            If money_given >= total And state = 1 Then
                 ' beregn veksel penge
                 state = state + 1
                 give_back(money_given, total)
@@ -150,7 +153,7 @@
         addMoney(sender.Text)
     End Sub
 
-    Private Sub Back_Click(sender As Object, e As EventArgs) Handles back.Click
+    Private Sub Back_Click(sender As Object, e As EventArgs) 
         If state > 0 Then
             state = state - 1
             If state = 0 Then
@@ -161,14 +164,52 @@
         End If
     End Sub
 
-    Private Sub Output_Click(sender As Object, e As EventArgs) Handles output.Click
-
-    End Sub
 
     Private Sub Reset_Click(sender As Object, e As EventArgs) Handles reset.Click
         If state = 1 Then
             money_given = 0
             output.Text = "Mønter indsat: 0 kr"
         End If
+    End Sub
+
+    Private Sub soda_dis_Tick(sender As Object, e As EventArgs) Handles dispenser_timer.Tick
+
+        If dispenser_counter_i > shopping_cart.Count - 1 Then
+            dispenser_timer.Stop()
+        Else
+            If shopping_cart(dispenser_counter_i) = 0 Then
+                dispenser_counter_i = dispenser_counter_i + 1
+                Console.WriteLine("New index: " & dispenser_counter_i)
+                Exit Sub
+            End If
+
+            If dispenser_counter_i = 0 Then
+                cola_pic.Image = My.Resources.ResourceManager.GetObject("coke_rot")
+            ElseIf dispenser_counter_i = 1 Then
+                cola_pic.Image = My.Resources.ResourceManager.GetObject("fanta_rot")
+            ElseIf dispenser_counter_i = 2 Then
+                cola_pic.Image = My.Resources.ResourceManager.GetObject("sprite_rot")
+            ElseIf dispenser_counter_i = 3 Then
+                cola_pic.Image = My.Resources.ResourceManager.GetObject("pepsi_rot")
+            Else
+                dispenser_timer.Stop()
+            End If
+
+            cola_pic.Location = New Point(cola_pic.Location.X, cola_pic.Location.Y + 2) ' 2 er farten
+            If cola_pic.Location.Y >= 12 Then
+                dispenser_timer.Stop()
+            End If
+        End If
+
+
+    End Sub
+
+    Private Sub cola_pic_Click(sender As Object, e As EventArgs) Handles cola_pic.Click
+        cola_pic.Location = New Point(cola_pic.Location.X, -55) ' nulstil til den normale position
+
+        If shopping_cart(dispenser_counter_i) > 0 Then
+            shopping_cart(dispenser_counter_i) = shopping_cart(dispenser_counter_i) - 1
+        End If
+        dispenser_timer.Start()
     End Sub
 End Class

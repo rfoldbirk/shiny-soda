@@ -22,14 +22,15 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.reset = New System.Windows.Forms.Button()
-        Me.back = New System.Windows.Forms.Button()
         Me.btn1 = New System.Windows.Forms.Button()
+        Me.reset = New System.Windows.Forms.Button()
         Me.btn2 = New System.Windows.Forms.Button()
         Me.btn5 = New System.Windows.Forms.Button()
         Me.btn10 = New System.Windows.Forms.Button()
         Me.btn20 = New System.Windows.Forms.Button()
+        Me.Panel3 = New System.Windows.Forms.Panel()
         Me.enter = New System.Windows.Forms.Button()
         Me.right = New System.Windows.Forms.Button()
         Me.left = New System.Windows.Forms.Button()
@@ -40,10 +41,15 @@ Partial Class Form1
         Me.output = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.instruct = New System.Windows.Forms.Label()
-        Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.dispenser_timer = New System.Windows.Forms.Timer(Me.components)
+        Me.cola_pic = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        Me.Panel4.SuspendLayout()
+        CType(Me.cola_pic, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -56,7 +62,6 @@ Partial Class Form1
         Me.Panel1.Controls.Add(Me.btn10)
         Me.Panel1.Controls.Add(Me.btn20)
         Me.Panel1.Controls.Add(Me.Panel3)
-        Me.Panel1.Controls.Add(Me.back)
         Me.Panel1.Controls.Add(Me.enter)
         Me.Panel1.Controls.Add(Me.right)
         Me.Panel1.Controls.Add(Me.left)
@@ -64,25 +69,6 @@ Partial Class Form1
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(248, 198)
         Me.Panel1.TabIndex = 2
-        '
-        'reset
-        '
-        Me.reset.BackColor = System.Drawing.SystemColors.ActiveBorder
-        Me.reset.Location = New System.Drawing.Point(19, 161)
-        Me.reset.Name = "reset"
-        Me.reset.Size = New System.Drawing.Size(75, 20)
-        Me.reset.TabIndex = 21
-        Me.reset.Text = "reset"
-        Me.reset.UseVisualStyleBackColor = False
-        '
-        'back
-        '
-        Me.back.Location = New System.Drawing.Point(114, 132)
-        Me.back.Name = "back"
-        Me.back.Size = New System.Drawing.Size(113, 27)
-        Me.back.TabIndex = 20
-        Me.back.Text = "Gå tilbage"
-        Me.back.UseVisualStyleBackColor = True
         '
         'btn1
         '
@@ -93,6 +79,16 @@ Partial Class Form1
         Me.btn1.TabIndex = 19
         Me.btn1.Text = "1"
         Me.btn1.UseVisualStyleBackColor = False
+        '
+        'reset
+        '
+        Me.reset.BackColor = System.Drawing.SystemColors.ActiveBorder
+        Me.reset.Location = New System.Drawing.Point(19, 161)
+        Me.reset.Name = "reset"
+        Me.reset.Size = New System.Drawing.Size(75, 20)
+        Me.reset.TabIndex = 21
+        Me.reset.Text = "nulstil input"
+        Me.reset.UseVisualStyleBackColor = False
         '
         'btn2
         '
@@ -133,6 +129,14 @@ Partial Class Form1
         Me.btn20.TabIndex = 15
         Me.btn20.Text = "20"
         Me.btn20.UseVisualStyleBackColor = False
+        '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.Panel3.Location = New System.Drawing.Point(9, 8)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(95, 181)
+        Me.Panel3.TabIndex = 22
         '
         'enter
         '
@@ -245,35 +249,54 @@ Partial Class Form1
         Me.instruct.Text = "Vælg din sodavand"
         Me.instruct.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
-        'Panel3
-        '
-        Me.Panel3.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.Panel3.Location = New System.Drawing.Point(9, 8)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(95, 181)
-        Me.Panel3.TabIndex = 22
-        '
         'Panel4
         '
-        Me.Panel4.BackColor = System.Drawing.SystemColors.ButtonShadow
-        Me.Panel4.Location = New System.Drawing.Point(386, 335)
+        Me.Panel4.BackColor = System.Drawing.Color.White
+        Me.Panel4.Controls.Add(Me.cola_pic)
+        Me.Panel4.Location = New System.Drawing.Point(427, 338)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(200, 71)
-        Me.Panel4.TabIndex = 4
+        Me.Panel4.Size = New System.Drawing.Size(130, 64)
+        Me.Panel4.TabIndex = 5
+        '
+        'dispenser_timer
+        '
+        '
+        'cola_pic
+        '
+        Me.cola_pic.Image = Global.Soda.My.Resources.Resources.pepsi_rot
+        Me.cola_pic.Location = New System.Drawing.Point(0, -55)
+        Me.cola_pic.Name = "cola_pic"
+        Me.cola_pic.Size = New System.Drawing.Size(130, 65)
+        Me.cola_pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.cola_pic.TabIndex = 0
+        Me.cola_pic.TabStop = False
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = Global.Soda.My.Resources.Resources._82334731_2724132454302789_5873125854657118208_n
+        Me.PictureBox2.Location = New System.Drawing.Point(414, 55)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(195, 364)
+        Me.PictureBox2.TabIndex = 4
+        Me.PictureBox2.TabStop = False
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(625, 450)
         Me.Controls.Add(Me.Panel4)
+        Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "Form1"
-        Me.Text = "Form1"
+        Me.Text = "Sodavands Super Dispenser"
         Me.Panel1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        Me.Panel4.ResumeLayout(False)
+        CType(Me.cola_pic, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -293,8 +316,10 @@ Partial Class Form1
     Friend WithEvents btn5 As Button
     Friend WithEvents btn10 As Button
     Friend WithEvents btn20 As Button
-    Friend WithEvents back As Button
     Friend WithEvents reset As Button
     Friend WithEvents Panel3 As Panel
+    Friend WithEvents cola_pic As PictureBox
+    Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Panel4 As Panel
+    Friend WithEvents dispenser_timer As Timer
 End Class
